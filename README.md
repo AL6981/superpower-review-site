@@ -1,4 +1,4 @@
-[![Build Status](https://codeship.com/projects/75bd7840-e1cf-0135-f6ea-7aa86eca2b9b/status?branch=master)]
+![Build Status](https://codeship.com/projects/75bd7840-e1cf-0135-f6ea-7aa86eca2b9b/status?branch=master)
 [![Code Climate](https://codeclimate.com/github/AL6981/superpower-review-site/badges/gpa.svg)](https://codeclimate.com/github/AL6981/superpower-review-site)
 [![Coverage Status](https://coveralls.io/repos/github/AL6981/superpower-review-site/badge.svg?branch=master)](https://coveralls.io/github/AL6981/superpower-review-site?branch=master)
 
