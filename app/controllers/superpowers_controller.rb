@@ -1,27 +1,45 @@
 class SuperpowersController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
+  def show
+    @superpower = Superpower.find(params[:id])
+  end
 
   def new
-    @user = User.find(params[:user_id])
     @superpower = Superpower.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @superpower = Superpower.new(superpower_params)
-    @superpower.user_id = @user
-    
+    @superpower.user = current_user
+
     if @superpower.save
       flash[:notice] = 'Superpower added successfully'
-      redirect_to user_superpower_path(@user)
+      redirect_to superpower_path(@superpower)
     else
       render :new
     end
   end
 
+  def edit
+    @superpower = Superpower.find(params[:id])
+  end
+
+  def update
+    @superpower = Superpower.find(params[:id])
+
+    if @superpower.update_attributes(superpower_params)
+      flash[:notice] = 'Superpower successfully updated'
+      redirect_to superpower_path(@superpower)
+    else
+      render :edit
+    end
+  end
+  
   protected
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :user_id)
+    params.require(:superpower).permit(:name, :description)
   end
 
 end
