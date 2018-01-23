@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user views list of superpowers' do
   let(:superpower_1) { FactoryBot.create(:superpower) }
-  scenario 'user visits index page and sees list of superpowers' do
+  xscenario 'user visits index page and sees list of superpowers' do
     visit superpowers_path
 
     expect(page).to have_content('Superpower Master List')
@@ -15,7 +15,7 @@ end
 feature 'user views superpower details' do
   let(:superpower_1) { FactoryBot.create(:superpower) }
   let(:superpower_2) { FactoryBot.create(:superpower, name: 'invisibility') }
-  scenario 'user clicks on a superpower and views its details' do
+  xscenario 'user clicks on a superpower and views its details' do
     visit superpowers_path
 
     click 'flying'

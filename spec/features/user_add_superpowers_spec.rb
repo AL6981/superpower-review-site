@@ -5,7 +5,7 @@ feature 'user can add superpowers' do
   let(:superpower_2) { FactoryBot.create(:superpower, name: '') }
   let(:superpower_3) { FactoryBot.create(:superpower, description: '') }
 
-  scenario 'user submit completed form' do
+  xscenario 'user submit completed form' do
 
     visit new_superpowers_path
 
@@ -19,7 +19,7 @@ feature 'user can add superpowers' do
     expect(page).to have_content('It is awesome to fly')
   end
 
-  scenario 'user can not submit blank superpower name' do
+  xscenario 'user can not submit blank superpower name' do
     visit new_superpowers_path
 
     fill_in 'Superpower', with: superpower_2.name
@@ -29,7 +29,7 @@ feature 'user can add superpowers' do
     expect(page).to have_content('Superpower cannot be blank!')
   end
 
-  scenario 'user can not submit blank superpower description' do
+  xscenario 'user can not submit blank superpower description' do
     visit new_superpowers_path
 
     fill_in 'Superpower', with: superpower_3.name
