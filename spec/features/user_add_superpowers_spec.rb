@@ -9,7 +9,7 @@ feature 'user can add superpowers' do
 
     visit new_superpowers_path
 
-    fill_in 'Name', with: superpower_1.name
+    fill_in 'Superpower', with: superpower_1.name
     fill_in 'Description', with: superpower_1.description
 
     click_button 'Add Superpower'
@@ -22,17 +22,17 @@ feature 'user can add superpowers' do
   scenario 'user can not submit blank superpower name' do
     visit new_superpowers_path
 
-    fill_in 'Name', with: superpower_2.name
+    fill_in 'Superpower', with: superpower_2.name
     fill_in 'Description', with: superpower_2.description
 
     click_button 'Add Superpower'
-    expect(page).to have_content('Name cannot be blank!')
+    expect(page).to have_content('Superpower cannot be blank!')
   end
 
   scenario 'user can not submit blank superpower description' do
     visit new_superpowers_path
 
-    fill_in 'Name', with: superpower_3.name
+    fill_in 'Superpower', with: superpower_3.name
     fill_in 'Description', with: superpower_3.description
 
     click_button 'Add Superpower'
