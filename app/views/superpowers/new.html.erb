@@ -1,0 +1,24 @@
+<h1>New Superpower Form</h1>
+
+<%= form_for [@user, @superpower] do |f| %>
+<% if @superpower.errors.size > 0 %>
+  <ul>
+    <% @superpower.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+  <%= f.label :name, 'Superpower' %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :description, 'Description' %>
+  <%= f.text_area :description %>
+</div>
+
+  <%= f.submit 'Add Superpower' %>
+
+<% end %>
