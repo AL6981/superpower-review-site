@@ -3,7 +3,7 @@
 <div><%=@superpower.description%></div>
 
 
-<%= link_to 'Edit', edit_superpower_path(@superpower) %>
+
 
 <%if !current_user.nil? && current_user.id == @superpower.user_id%>
   <%= link_to 'Edit', edit_superpower_path(@superpower) %>
@@ -19,6 +19,12 @@
 
     Rating: <%= review.rating %>
     <%= review.body %>
+
+    <%if !current_user.nil? && current_user.id == review.user_id%>
+      <%= link_to 'Edit Review', edit_superpower_review_path(review) %>
+      <%= link_to 'Delete', superpower_review_path(@superpower, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+
 
 
   </div>
