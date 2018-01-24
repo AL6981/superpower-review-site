@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :superpowers
+
+  def admin?
+    role == "admin"
+  end
 end
