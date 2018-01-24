@@ -12,7 +12,7 @@ feature 'user can add superpowers' do
   let(:superpower_3) { FactoryBot.build(:superpower, description: '') }
 
 
-  xscenario 'user submit completed form' do
+  scenario 'user submit completed form' do
 
     visit new_superpower_path(superpower_1)
 
