@@ -1,27 +1,32 @@
 require 'rails_helper'
 
-xfeature 'user updates account' do
-  let(:flash) { FactoryBot.create(:user)}
+feature 'user updates account' do
+
+  let(:flash) { FactoryBot.create(:user) }
   scenario 'authenticated user updates profile' do
 
     visit edit_user_registration_path
+    fill_in "Email", :with => flash.email
+    fill_in "Password", :with => flash.password
 
-    expect(page).to have_content("Update Profile")
+    click_button "Log in"
+
+    expect(page).to have_content("Edit User")
     expect(page).to have_content("Email")
     expect(page).to have_content("Password")
-    expect(page).to have_content("Update Photo")
+    expect(page).to have_content("Password confirmation")
+    expect(page).to have_content("Current password")
   end
 
   scenario 'authenticated user deletes profile' do
 
-    visit cancel_user_registration_path
+    visit edit_user_registration_path
 
-    expect(page).to have_content("Delete Profile")
+    fill_in "Email", :with => flash.email
+    fill_in "Password", :with => flash.password
+    click_button "Log in"
+    click_on "Cancel my account"
 
-    click_link "Delete Profile"
-
-    expect(page).to have_content("Profile Deleted")
-
-    expect(flash).to be_nil
+    expect(User.count).to be(0)
   end
 end
