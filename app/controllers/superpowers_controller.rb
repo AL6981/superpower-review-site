@@ -1,6 +1,10 @@
 class SuperpowersController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
+  def index
+    @superpowers = Superpower.all
+  end
+
   def show
     @superpower = Superpower.find(params[:id])
   end
@@ -35,7 +39,13 @@ class SuperpowersController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    Superpower.find(params[:id]).destroy
+    flash[:success] = 'Superpower successfully deleted'
+    redirect_to superpowers_path
+  end
+
   protected
 
   def superpower_params
