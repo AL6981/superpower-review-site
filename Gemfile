@@ -7,6 +7,7 @@ end
 
 gem 'jquery-rails'
 group :test do
+  gem 'database_cleaner'
   gem 'coveralls', require: false
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

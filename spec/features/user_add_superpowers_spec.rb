@@ -1,13 +1,20 @@
 require 'rails_helper'
 
 feature 'user can add superpowers' do
-  let(:superpower_1) { FactoryBot.create(:superpower) }
-  let(:superpower_2) { FactoryBot.create(:superpower, name: '') }
-  let(:superpower_3) { FactoryBot.create(:superpower, description: '') }
+
+  before(:each) do
+    user1 = FactoryBot.create(:user)
+    sign_in_as(user1)
+  end
+
+  let(:superpower_1) { FactoryBot.build(:superpower) }
+  let(:superpower_2) { FactoryBot.build(:superpower, name: '')}
+  let(:superpower_3) { FactoryBot.build(:superpower, description: '') }
+
 
   xscenario 'user submit completed form' do
 
-    visit new_superpowers_path
+    visit new_superpower_path(superpower_1)
 
     fill_in 'Superpower', with: superpower_1.name
     fill_in 'Description', with: superpower_1.description
@@ -19,23 +26,24 @@ feature 'user can add superpowers' do
     expect(page).to have_content('It is awesome to fly')
   end
 
-  xscenario 'user can not submit blank superpower name' do
-    visit new_superpowers_path
+  scenario 'user can not submit blank superpower name' do
 
-    fill_in 'Superpower', with: superpower_2.name
+    visit new_superpower_path(superpower_2)
+
     fill_in 'Description', with: superpower_2.description
 
     click_button 'Add Superpower'
-    expect(page).to have_content('Superpower cannot be blank!')
+
+    expect(page).to have_content("Name can't be blank")
   end
 
-  xscenario 'user can not submit blank superpower description' do
-    visit new_superpowers_path
+  scenario 'user can not submit blank superpower description' do
+
+    visit new_superpower_path(superpower_3)
 
     fill_in 'Superpower', with: superpower_3.name
-    fill_in 'Description', with: superpower_3.description
 
     click_button 'Add Superpower'
-    expect(page).to have_content('Description cannot be blank!')
+    expect(page).to have_content("Description can't be blank")
   end
 end

@@ -1,0 +1,14 @@
+<h2><%=@superpower.name%></h2>
+
+<div><%=@superpower.description%></div>
+
+<h1>Reviews</h1>
+
+
+
+<%if !current_user.nil? && current_user.id == @superpower.user_id%>
+  <%= link_to 'Edit', edit_superpower_path(@superpower) %>
+  <%= link_to 'Delete', @superpower, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
+
+  <%= link_to 'View all superpowers', superpowers_path %>

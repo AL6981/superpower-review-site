@@ -10,5 +10,6 @@ FactoryBot.define do
   factory :superpower do
     name 'flying'
     description 'It is awesome to fly'
+    association :user, factory: :user
   end
 end
