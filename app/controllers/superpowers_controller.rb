@@ -3,6 +3,7 @@ class SuperpowersController < ApplicationController
 
   def show
     @superpower = Superpower.find(params[:id])
+    @reviews = @superpower.reviews
   end
 
   def new
@@ -35,7 +36,7 @@ class SuperpowersController < ApplicationController
       render :edit
     end
   end
-  
+
   protected
 
   def superpower_params

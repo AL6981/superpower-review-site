@@ -3,3 +3,13 @@
 <div><%=@superpower.description%></div>
 
 <%= link_to 'Edit', edit_superpower_path(@superpower) %>
+
+<% @reviews.each do |review| %>
+  <div>
+<% binding.pry %>
+    Rating: <%= review.rating %>
+    <%= review.body %>
+
+
+  </div>
+<% end %>
