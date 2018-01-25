@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.superpower = @superpower
 
-
     if @review.save
       flash[:notice] = 'Review Added Successfully'
       redirect_to superpower_path(@superpower)
@@ -23,16 +22,12 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-
     @review = Review.find(params[:id])
-
-
   end
 
   def update
-
     @review = Review.find(params[:id])
-
+    @superpower = @review.superpower
 
     if @review.update_attributes(review_params)
       flash[:notice] = 'Review Updated Successfully'
@@ -48,7 +43,6 @@ class ReviewsController < ApplicationController
     @superpower = @review.superpower
 
     @review.destroy
-
     flash[:notice] = 'Review deleted'
 
     redirect_to superpower_path(@superpower)
