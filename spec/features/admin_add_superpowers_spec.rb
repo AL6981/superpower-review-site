@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user can add superpowers' do
+feature 'admin can add superpowers' do
 
   before(:each) do
-    user1 = FactoryBot.create(:user)
+    user1 = FactoryBot.create(:user, role: "admin")
     sign_in_as(user1)
   end
 
@@ -12,7 +12,7 @@ feature 'user can add superpowers' do
   let(:superpower_3) { FactoryBot.build(:superpower, description: '') }
 
 
-  scenario 'user submit completed form' do
+  scenario 'admin submit completed form' do
 
     visit new_superpower_path(superpower_1)
 
@@ -26,7 +26,7 @@ feature 'user can add superpowers' do
     expect(page).to have_content('It is awesome to fly')
   end
 
-  scenario 'user can not submit blank superpower name' do
+  scenario 'admin can not submit blank superpower name' do
 
     visit new_superpower_path(superpower_2)
 
@@ -37,7 +37,7 @@ feature 'user can add superpowers' do
     expect(page).to have_content("Name can't be blank")
   end
 
-  scenario 'user can not submit blank superpower description' do
+  scenario 'admin can not submit blank superpower description' do
 
     visit new_superpower_path(superpower_3)
 

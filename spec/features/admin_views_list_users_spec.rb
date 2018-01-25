@@ -11,13 +11,13 @@ feature 'admin views a list of users' do
     visit admin_users_path
 
     expect(page).to have_content('Registered Users')
-    expect(page).to have_content('user2')
-    expect(page).to have_content('user3')
+    expect(page).to have_content(user2.email)
+    expect(page).to have_content(user3.email)
     expect(page).to have_content('Delete')
 
     first(:link, 'Delete').click
 
-    expect(page).to_not have_content("user2")
+    expect(page).to_not have_content(user2.email)
     expect(page).to have_content("Success")
   end
 end
