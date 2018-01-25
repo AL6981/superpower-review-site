@@ -14,9 +14,9 @@
 
 <h1>Reviews</h1>
 
+<h3><%= link_to 'Add Review', new_superpower_review_path(@superpower) %></h3>
 <% @reviews.each do |review| %>
   <div>
-
     Rating: <%= review.rating %>
     <%= review.body %>
 
@@ -24,8 +24,5 @@
       <%= link_to 'Edit Review', edit_review_path(review) %>
       <%= link_to 'Delete Review', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%end%>
-
-
-
   </div>
 <% end %>
