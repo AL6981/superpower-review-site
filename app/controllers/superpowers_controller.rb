@@ -5,7 +5,9 @@ class SuperpowersController < ApplicationController
     @superpowers = Superpower.all
   end
 
+
   def show
     @superpower = Superpower.find(params[:id])
+    @reviews = @superpower.reviews
   end
 end
