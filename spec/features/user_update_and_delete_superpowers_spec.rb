@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xfeature 'user update superpowers' do
+feature 'user update superpowers' do
 
   scenario 'user can edit previous post' do
     user1 = FactoryBot.create(:user)
