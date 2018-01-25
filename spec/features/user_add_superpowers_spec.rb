@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user can add superpowers' do
+xfeature 'user can add superpowers' do
 
   before(:each) do
     user1 = FactoryBot.create(:user)
