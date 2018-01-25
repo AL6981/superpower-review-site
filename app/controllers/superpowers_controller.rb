@@ -1,5 +1,5 @@
 class SuperpowersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
 
   def index
     @superpowers = Superpower.all
@@ -53,5 +53,4 @@ class SuperpowersController < ApplicationController
   def superpower_params
     params.require(:superpower).permit(:name, :description)
   end
-
 end
