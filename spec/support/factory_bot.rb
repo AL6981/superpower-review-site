@@ -5,6 +5,7 @@ FactoryBot.define do
     sequence(:email) {|n| "user#{n}@example.com" }
     password 'password'
     password_confirmation 'password'
+    role "member"
   end
 
   factory :superpower do
@@ -12,4 +13,6 @@ FactoryBot.define do
     description 'It is awesome to fly'
     association :user, factory: :user
   end
+
+
 end
