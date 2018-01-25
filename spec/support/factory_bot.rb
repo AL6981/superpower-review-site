@@ -14,5 +14,15 @@ FactoryBot.define do
     association :user, factory: :user
   end
 
+  factory :review do
+    rating 2
+    body 'This is a review body'
+    association :superpower
+    association :user
+  end
 
+  factory :vote do
+    association :user
+    association :review
+  end
 end

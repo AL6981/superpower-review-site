@@ -10,7 +10,6 @@ class SuperpowersController < ApplicationController
   def show
     @superpower = Superpower.find(params[:id])
     @reviews = @superpower.reviews
-
   end
 
   def new
