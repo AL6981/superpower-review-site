@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resources :superpowers do
     resources :reviews, only: [:new, :create]
   end
-  
-  resources :reviews, only: [:edit, :update, :destroy]
+
+  resources :reviews, only: [:edit, :update, :destroy] do
+    resources :votes, only: [:create, :destroy]
+  end
 
   namespace :admin do
     resources :users
