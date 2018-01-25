@@ -23,18 +23,15 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    # binding.pry
-    # @superpower = Superpower.find(params[:superpower_id])
-    # @review = @superpower.review
-    @review = Review.find(params[:superpower_id])
+
+    @review = Review.find(params[:id])
 
 
   end
 
   def update
-    # @superpower = Superpower.find(params[:superpower_id])
-    # @review = @superpower.review
-    @review = Review.find(params[:superpower_id])
+
+    @review = Review.find(params[:id])
 
 
     if @review.update_attributes(review_params)
@@ -47,10 +44,12 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @superpower = Superpower.find(params[:superpower_id])
     @review = Review.find(params[:id])
+    @superpower = @review.superpower
 
     @review.destroy
+
+    flash[:notice] = 'Review deleted'
 
     redirect_to superpower_path(@superpower)
 

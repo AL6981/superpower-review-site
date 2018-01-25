@@ -38,9 +38,10 @@ feature 'user can do CRUD actions on reviews for a superpower' do
 
 
   scenario 'user can update a review of a superpower' do
-    # binding.pry
+
 
     visit superpower_path(superpower_1)
+
 
     click_link 'Edit Review'
 
@@ -59,14 +60,14 @@ feature 'user can do CRUD actions on reviews for a superpower' do
     expect(page).to have_content('Edit Review')
     expect(page).to have_content('Rating')
     expect(page).to have_content('Review')
-    expect(page).to_not have_content('2')
     expect(page).to_not have_content('This was not as good')
   end
 
   scenario 'a user should be able to delete their review' do
     visit superpower_path(superpower_1)
 
-    click_link 'Delete'
+
+    click_link 'Delete Review'
 
     expect(page).to have_content('Review deleted')
     expect(page).to_not have_content('This is great')
