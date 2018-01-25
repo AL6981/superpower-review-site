@@ -21,8 +21,9 @@
     <%= review.body %>
 
     Votes: <%= review.score %>
-    <%= link_to 'Up Vote', review_votes_path(review) %>
-    <%= link_to 'Down Vote', review_vote_path(review) %>
+    <%= link_to 'Up Vote', review_votes_path(review), method: :post %>
+    <%= link_to 'Down Vote', review_vote_path(review, ), method: :delete %>
+
 
     <%if !current_user.nil? && current_user.id == review.user_id%>
       <%= link_to 'Edit Review', edit_review_path(review) %>

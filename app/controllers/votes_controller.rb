@@ -1,23 +1,26 @@
 class VotesController < ApplicationController
   def create
-    @vote = Vote.new(secure_params)
-    @vote.review = Review.find(params[:review_id])
+    @review = Review.find(params[:review_id])
+    @vote = Vote.new
+    @vote.review = @review
     @vote.user = current_user
+    @superpower = @review.superpower
+    @reviews = @superpower.reviews
+
+
     if @vote.save
-        render 'superpowers/show'
     else
       flash[:alert] = "You can only vote once!"
-      render 'superpowers/show'
     end
   end
 
   def destroy
-    @vote = Vote.find(params[:id])
+    @vote = Vote.last
     @vote.destroy
   end
 
   private
     def secure_params
-      params.require(:vote).permit(:user)
+      params.require(:vote).permit(:review, :user)
     end
 end
