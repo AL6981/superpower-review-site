@@ -2,7 +2,6 @@
 
 <div><%=@superpower.description%></div>
 
-<h1>Reviews</h1>
 
 
 
@@ -11,4 +10,22 @@
   <%= link_to 'Delete', @superpower, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%end%>
 
-  <%= link_to 'View all superpowers', superpowers_path %>
+<%= link_to 'View all superpowers', superpowers_path %>
+
+<h1>Reviews</h1>
+
+<% @reviews.each do |review| %>
+  <div>
+
+    Rating: <%= review.rating %>
+    <%= review.body %>
+
+    <%if !current_user.nil? && current_user.id == review.user_id%>
+      <%= link_to 'Edit Review', edit_review_path(review) %>
+      <%= link_to 'Delete Review', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+
+
+
+  </div>
+<% end %>

@@ -6,7 +6,10 @@ class User < ApplicationRecord
 
   has_many :superpowers
 
+
   def admin?
     role == "admin"
   end
+
+  has_many :reviews
 end
