@@ -6,6 +6,7 @@ feature 'admin views a list of users' do
     user1 = FactoryBot.create(:user, role: 'admin')
     user2 = FactoryBot.create(:user)
     user3 = FactoryBot.create(:user)
+    sign_in_as(user1)
 
     visit admin_users_path
 
@@ -18,6 +19,5 @@ feature 'admin views a list of users' do
 
     expect(page).to_not have_content("user2")
     expect(page).to have_content("Success")
-
   end
 end
