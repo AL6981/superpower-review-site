@@ -5,15 +5,18 @@ feature 'admin views a list of users' do
   scenario 'admin deletes a user' do
     user1 = FactoryBot.create(:user, role: 'admin')
     user2 = FactoryBot.create(:user)
-
+    user3 = FactoryBot.create(:user)
 
     visit admin_users_path
 
     expect(page).to have_content('Registered Users')
+    expect(page).to have_content('user2')
+    expect(page).to have_content('user3')
     expect(page).to have_content('Delete')
 
-    click_on 'Delete'
+    first(:link, 'Delete').click
 
+    expect(page).to_not have_content("user2")
     expect(page).to have_content("Success")
 
   end

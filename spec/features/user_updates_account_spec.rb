@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user updates account' do
+xfeature 'user updates account' do
 
   let(:flash) { FactoryBot.create(:user) }
   scenario 'authenticated user updates profile' do
