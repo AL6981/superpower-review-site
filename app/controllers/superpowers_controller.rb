@@ -47,7 +47,7 @@ class SuperpowersController < ApplicationController
     redirect_to superpowers_path
   end
 
-  protected
+  private
 
   def superpower_params
     params.require(:superpower).permit(:name, :description)
@@ -55,7 +55,8 @@ class SuperpowersController < ApplicationController
 
   def authorize_user
     if !user_signed_in? || !current_user.admin?
-      raise ActionController::RoutingError.new("Not Found")
+      flash[:notice] = 'Unauthorized access'
+      redirect_to :back
     end
   end
 end
