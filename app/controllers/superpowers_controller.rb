@@ -56,7 +56,7 @@ class SuperpowersController < ApplicationController
   def authorize_user
     if !user_signed_in? || !current_user.admin?
       flash[:notice] = 'Unauthorized access'
-      redirect_to :back
+      redirect_to superpowers_path
     end
   end
 end
