@@ -27,6 +27,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    @superpower = @review.superpower
 
     if @review.update_attributes(review_params)
       flash[:notice] = 'Review Updated Successfully'
@@ -42,11 +43,9 @@ class ReviewsController < ApplicationController
     @superpower = @review.superpower
 
     @review.destroy
-
     flash[:notice] = 'Review deleted'
 
     redirect_to superpower_path(@superpower)
-
   end
 
   private
@@ -60,7 +59,7 @@ class ReviewsController < ApplicationController
       redirect_to superpower_path(@superpower)
     end
   end
-
+  
   def review_params
     params.require(:review).permit(:rating, :body)
   end
