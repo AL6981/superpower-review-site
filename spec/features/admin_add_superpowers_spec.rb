@@ -7,6 +7,7 @@ feature 'admin can add superpowers' do
     sign_in_as(user1)
   end
 
+  let(:user2) { FactoryBot.create(:user) }
   let(:superpower_1) { FactoryBot.build(:superpower) }
   let(:superpower_2) { FactoryBot.build(:superpower, name: '')}
   let(:superpower_3) { FactoryBot.build(:superpower, description: '') }
@@ -45,5 +46,15 @@ feature 'admin can add superpowers' do
 
     click_button 'Add Superpower'
     expect(page).to have_content("Description can't be blank")
+  end
+
+  scenario 'only admin can create a new superpower' do
+    visit root_path
+    click_on 'Sign Out'
+    sign_in_as(user2)
+
+    visit new_superpower_path
+
+    expect(page).to have_content('Unauthorized access') 
   end
 end
