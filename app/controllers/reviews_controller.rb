@@ -47,7 +47,6 @@ class ReviewsController < ApplicationController
     flash[:notice] = 'Review deleted'
 
     redirect_to superpower_path(@superpower)
-
   end
 
   private
