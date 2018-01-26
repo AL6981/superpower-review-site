@@ -25,7 +25,7 @@
     <%= link_to 'Down Vote', review_vote_path(review), method: :delete %>
 
 
-    <%if !current_user.nil? && current_user.id == review.user_id%>
+    <% if !current_user.nil? && current_user == review.user %>
       <%= link_to 'Edit Review', edit_review_path(review) %>
       <%= link_to 'Delete Review', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%end%>

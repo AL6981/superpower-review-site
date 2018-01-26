@@ -19,6 +19,7 @@ class VotesController < ApplicationController
       @vote.destroy
     end
   end
+  
 
   private
     def secure_params
