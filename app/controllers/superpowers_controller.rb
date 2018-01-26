@@ -1,5 +1,5 @@
 class SuperpowersController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user?, except: [:index, :show]
 
   def index
     @superpowers = Superpower.all
@@ -53,10 +53,10 @@ class SuperpowersController < ApplicationController
     params.require(:superpower).permit(:name, :description)
   end
 
-  def authorize_user
+  def authorize_user?
     if !user_signed_in? || !current_user.admin?
       flash[:notice] = 'Unauthorized access'
-      redirect_to superpowers_path
+      redirect_back(fallback_location: root_path) and return
     end
   end
 end

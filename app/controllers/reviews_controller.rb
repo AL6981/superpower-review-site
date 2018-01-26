@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :authorize_user, only: [:edit, :update, :destroy]
+  before_action :authorize_user?, only: [:edit, :update, :destroy]
 
   def new
     @superpower = Superpower.find(params[:superpower_id])
@@ -24,6 +24,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @superpower = @review.superpower
   end
 
   def update
@@ -52,13 +53,13 @@ class ReviewsController < ApplicationController
 
   private
 
-  def authorize_user
+  def authorize_user?
      @review = Review.find(params[:id])
      @superpower = @review.superpower
 
     if !user_signed_in? || current_user != @review.user
       flash[:notice] = 'Unauthorized access'
-      redirect_to superpower_path(@superpower)
+      redirect_to superpower_path(@superpower) and return
     end
   end
 
