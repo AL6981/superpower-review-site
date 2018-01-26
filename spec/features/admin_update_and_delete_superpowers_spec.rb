@@ -24,9 +24,9 @@ feature 'admin update superpowers' do
   end
 
   scenario 'only admin should see edit link' do
+    user1 = FactoryBot.create(:user, role: 'admin')
     user2 = FactoryBot.create(:user)
     sign_in_as(user2)
-    user1 = FactoryBot.create(:user, role: 'admin')
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 
     visit superpower_path(superpower_1.id)

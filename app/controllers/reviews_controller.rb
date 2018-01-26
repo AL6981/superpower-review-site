@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def new
     @superpower = Superpower.find(params[:superpower_id])
