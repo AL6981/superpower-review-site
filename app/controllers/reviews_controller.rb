@@ -56,7 +56,7 @@ class ReviewsController < ApplicationController
      @review = Review.find(params[:id])
      @superpower = @review.superpower
 
-    if !user_signed_in? || current_user != review.user
+    if !user_signed_in? || current_user != @review.user
       flash[:notice] = 'Unauthorized access'
       redirect_to superpower_path(@superpower)
     end
