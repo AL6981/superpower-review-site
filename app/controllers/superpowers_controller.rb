@@ -1,5 +1,5 @@
 class SuperpowersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authorize_user, except: [:index, :show]
 
   def index
     @superpowers = Superpower.all
@@ -7,6 +7,7 @@ class SuperpowersController < ApplicationController
 
   def show
     @superpower = Superpower.find(params[:id])
+    @reviews = @superpower.reviews
   end
 
   def new
@@ -50,5 +51,11 @@ class SuperpowersController < ApplicationController
 
   def superpower_params
     params.require(:superpower).permit(:name, :description)
+  end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

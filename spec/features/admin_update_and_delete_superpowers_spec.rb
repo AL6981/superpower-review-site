@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user update superpowers' do
+feature 'admin update superpowers' do
 
-  scenario 'user can edit previous post' do
-    user1 = FactoryBot.create(:user)
+  scenario 'admin can edit previous post' do
+    user1 = FactoryBot.create(:user, role: 'admin')
     sign_in_as(user1)
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 #do we need to visit this link first, the show page, so we can SEE the edit link on the page? Then after clicking edit, we go to the correct page. Not sure why :id isn't generated here. USer id IS generated
@@ -12,7 +12,6 @@ feature 'user update superpowers' do
 
     click_link "Edit"
 
-#    visit edit_superpower_path(superpower_1)
     expect(page).to have_content('Edit Superpower')
     expect(page).to have_content("Superpower")
     expect(page).to have_content('flying')
@@ -24,10 +23,10 @@ feature 'user update superpowers' do
     expect(page).to have_content("Superpower successfully updated")
   end
 
-  scenario 'user should only see edit link if they added the superpower' do
+  scenario 'only admin should see edit link' do
     user2 = FactoryBot.create(:user)
     sign_in_as(user2)
-    user1 = FactoryBot.create(:user)
+    user1 = FactoryBot.create(:user, role: 'admin')
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 
     visit superpower_path(superpower_1.id)
@@ -37,8 +36,8 @@ feature 'user update superpowers' do
 
   end
 
-  scenario 'user can delete a superpower they added' do
-    user1 = FactoryBot.create(:user)
+  scenario 'admin can delete a superpower' do
+    user1 = FactoryBot.create(:user, role: 'admin')
     sign_in_as(user1)
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 
@@ -51,10 +50,10 @@ feature 'user update superpowers' do
 
   end
 
-  scenario 'user should only see delete link if they added the superpower' do
+  scenario 'only admin should see delete link' do
     user1 = FactoryBot.create(:user)
     sign_in_as(user1)
-    user2 = FactoryBot.create(:user)
+    user2 = FactoryBot.create(:user, role: 'admin')
     superpower_2 = FactoryBot.create(:superpower, user: user2)
 
     visit superpower_path(superpower_2)

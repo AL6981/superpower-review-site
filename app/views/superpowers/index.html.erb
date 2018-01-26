@@ -8,4 +8,6 @@
   <% end %>
 </ul>
 
-<%= link_to "Add new superpower", new_superpower_path %>
+<%if !current_user.nil? && current_user.admin? %>
+  <%= link_to "Add new superpower", new_superpower_path %>
+<% end %>
