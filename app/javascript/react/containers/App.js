@@ -9,7 +9,7 @@ const App = props => {
     <Router history={browserHistory}>
       <Route path='/' component={SuperpowerIndexContainer}/>
       <Route path='/superpowers' component={SuperpowerIndexContainer}/>
-      <Route path='/superpower/:id' component={SuperpowerShowContainer}/>
+      <Route path='/superpowers/:id' component={SuperpowerShowContainer} />
     </Router>
   )
 }
