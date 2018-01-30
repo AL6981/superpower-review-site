@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const SuperpowerTile = props => {
   return(
     <div>
-      <h6>This is the SuperpowerTile</h6>
+      <p><Link to={`/superpowers/${props.id}`}>{props.name}</Link></p>
     </div>
   )
 }
