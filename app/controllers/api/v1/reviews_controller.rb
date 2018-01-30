@@ -1,10 +1,10 @@
-class Api::V1::PostsController < ApplicationController
+class Api::V1::ReviewsController < ApplicationController
   def index
-    render json: {Review.all}
+    render json: Review.all
   end
 
   def show
-    render json: {Review.find(params[:id])}
+    render json: Review.find(params[:id])
   end
 
   def new
@@ -13,17 +13,23 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    @superpower = Superpower.find(params[:superpower_id])
-    @review = Review.new(review_params)
-    @review.user = current_user
-    @review.superpower = @superpower
+    superpower = Superpower.find(params[:superpower_id])
+    review = Review.new(review_params)
+    review.user = current_user
+    review.superpower = superpower
 
-    if @review.save
+    if review.save
       flash[:notice] = 'Review Added Successfully'
-      redirect_to superpower_path(@superpower)
+      redirect_to superpower_path(superpower)
     else
       flash[:alert] = @review.errors.full_messages.join(", ")
       render :new
     end
+  end
+
+  protected
+
+  def review_params
+    params.require(:review).permit(:rating, :body)
   end
 end

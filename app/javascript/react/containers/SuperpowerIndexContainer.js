@@ -11,7 +11,18 @@ class SuperpowerIndexContainer extends Component {
 
   componentDidMount() {
     console.log('component mounted')
-    fetch("/api/v1/superpowers")
+    fetch('/api/v1/superpowers')
+    .then(response => response.json())
+    .then(body => {
+      this.setState({superpowers: body})
+    })
+  }
+
+  addNewSuperpower(formPayload) {
+    fetch('/api/v1/superpowers', {
+      method: 'POST',
+      body: JSON.stringify(formPayload)
+    })
     .then(response => response.json())
     .then(body => {
       this.setState({superpowers: body})
