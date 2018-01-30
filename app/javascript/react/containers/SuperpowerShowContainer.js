@@ -6,13 +6,23 @@ import ReviewFormContainer from './containers/ReviewFormContainer'
 class SuperpowerShowContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      superpower: {
+        name: 'Flying',
+        description: 'It is awesome to fly'
+      }
+    }
   }
 
   render() {
     return(
       <div>Hello from superpower show page
-        <div> <SuperpowerDetailTile /></div>
+        <div>
+          <SuperpowerDetailTile
+            name={this.state.superpower.name}
+            description={this.state.superpower.description}
+          />
+        </div>
         <div> <ReviewsContainer /></div>
         <div> <ReviewFormContainer /></div>
       </div>
