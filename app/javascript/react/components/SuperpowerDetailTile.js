@@ -4,19 +4,19 @@ const SuperpowerDetailTile = (props) => {
   return(
     <div>
       <div>hello from superpower detail tile</div>
-      <div>
-        image tag
+      <div className="superpower-pic">
+        <img src="#" alt="Picture of the selected superpower" />image tag
       </div>
 
-      <div>
+      <div className="avg-rating">
         average rating
       </div>
 
-      <div>
+      <div className="superpower-name">
         Name {props.name}
       </div>
 
-      <div>
+      <div className="superpower-description">
         Details {props.description}
       </div>
 
