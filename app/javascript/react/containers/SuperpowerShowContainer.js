@@ -20,7 +20,8 @@ class SuperpowerShowContainer extends React.Component {
     .then(json => {
       this.setState({
         name: json.superpower.name,
-        description: json.superpower.description
+        description: json.superpower.description,
+        reviews: json.reviews
       })
     })
   }
@@ -28,14 +29,14 @@ class SuperpowerShowContainer extends React.Component {
   render() {
     return(
       <div>Hello from superpower show page
-        <div>
-          <SuperpowerDetailTile
-            name={this.state.name}
-            description={this.state.description}
-          />
-        </div>
-        <div> <ReviewsContainer /></div>
-        <div> <ReviewFormContainer /></div>
+        <SuperpowerDetailTile
+          name={this.state.name}
+          description={this.state.description}
+        />
+        <ReviewsContainer
+          reviews={this.state.reviews}
+        />
+        <ReviewFormContainer />
       </div>
     )
   }
