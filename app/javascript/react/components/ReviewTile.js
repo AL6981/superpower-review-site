@@ -1,4 +1,5 @@
 import React from 'react';
+import VotesContainer from '../containers/VotesContainer'
 
 const ReviewTile = props => {
   return(
@@ -6,6 +7,10 @@ const ReviewTile = props => {
       Rating: {props.rating}
       <br />
       Review: {props.body}
+
+      <div className="votes-container">
+        <VotesContainer />
+      </div>
     </div>
   )
 }
