@@ -14,6 +14,10 @@ class SuperpowerShowContainer extends React.Component {
     }
   }
 
+  componentDidMount() {
+    fetch('')
+  }
+
   render() {
     return(
       <div>Hello from superpower show page
