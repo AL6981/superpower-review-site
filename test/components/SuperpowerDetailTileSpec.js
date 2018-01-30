@@ -33,5 +33,4 @@ describe('SuperpowerDetailTile', () => {
     expect(wrapper.find('.superpower-description')).toMatchSelector('div');
     expect(wrapper.find('.superpower-description').text()).toEqual('I can rip phone books in half')
   });
-
 });
