@@ -1,7 +1,7 @@
 import React from 'react';
 import SuperpowerDetailTile from '../components/SuperpowerDetailTile'
-import ReviewsContainer from './containers/ReviewsContainer'
-import ReviewFormContainer from './containers/ReviewFormContainer'
+import ReviewsContainer from './ReviewsContainer'
+import ReviewFormContainer from './ReviewFormContainer'
 
 class SuperpowerShowContainer extends React.Component {
   constructor(props) {
