@@ -7,15 +7,22 @@ class SuperpowerShowContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      superpower: {
-        name: 'Flying',
-        description: 'It is awesome to fly'
-      }
+      name: '',
+      description: '',
+      reviews: []
     }
   }
 
   componentDidMount() {
-    fetch('')
+    let superpowerId = this.props.params.id
+    fetch(`/api/v1/superpowers/${superpowerId}`)
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        name: json.superpower.name,
+        description: json.superpower.description
+      })
+    })
   }
 
   render() {
@@ -23,8 +30,8 @@ class SuperpowerShowContainer extends React.Component {
       <div>Hello from superpower show page
         <div>
           <SuperpowerDetailTile
-            name={this.state.superpower.name}
-            description={this.state.superpower.description}
+            name={this.state.name}
+            description={this.state.description}
           />
         </div>
         <div> <ReviewsContainer /></div>

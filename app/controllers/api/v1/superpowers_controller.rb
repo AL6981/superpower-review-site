@@ -1,4 +1,4 @@
-class Api::V1::SuperpowerController < ApiController
+class Api::V1::SuperpowersController < ApiController
   def show
     @superpower = Superpower.find(params[:id])
     render json: {
