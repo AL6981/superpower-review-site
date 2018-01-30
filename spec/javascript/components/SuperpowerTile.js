@@ -1,3 +1,5 @@
+import SuperpowerTile from '../../../app/javascript/react/components/SuperpowerTile'
+
 describe('SuperpowerTile', () => {
   let wrapper,
       name;
@@ -5,7 +7,7 @@ describe('SuperpowerTile', () => {
   beforeEach(() => {
     wrapper = mount(
       <SuperpowerTile
-        name: 'Flight'
+        name = 'Flight'
       />
     )
   });
