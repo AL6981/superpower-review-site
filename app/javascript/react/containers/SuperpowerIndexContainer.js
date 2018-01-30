@@ -13,7 +13,10 @@ class SuperpowerIndexContainer extends Component {
     return(
       <div>
         <h4>Index Container</h4>
-        <SuperpowerTile />
+        <SuperpowerTile
+          key={superpower.id}
+          name={}
+        />
       </div>
     )
 
