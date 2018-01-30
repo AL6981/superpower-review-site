@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const SuperpowerTile = props => {
   return(
     <div>
-      <Link to={`/superpowers/${props.id}`}>{props.name}</Link>
+      <p><Link to={`/superpowers/${props.id}`}>{props.name}</Link></p>
     </div>
   )
 }
