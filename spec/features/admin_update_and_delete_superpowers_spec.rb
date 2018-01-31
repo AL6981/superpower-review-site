@@ -8,7 +8,7 @@ feature 'admin update superpowers' do
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 #do we need to visit this link first, the show page, so we can SEE the edit link on the page? Then after clicking edit, we go to the correct page. Not sure why :id isn't generated here. USer id IS generated
 
-    visit superpower_path(superpower_1.id)
+    visit admin_superpower_path(superpower_1.id)
 
     click_link "Edit"
 
@@ -29,7 +29,7 @@ feature 'admin update superpowers' do
     sign_in_as(user2)
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 
-    visit superpower_path(superpower_1.id)
+    visit admin_superpower_path(superpower_1.id)
 
     expect(page).to_not have_content("Edit")
     expect(page).to have_content("View all superpowers")
@@ -41,7 +41,7 @@ feature 'admin update superpowers' do
     sign_in_as(user1)
     superpower_1 = FactoryBot.create(:superpower, user: user1)
 
-    visit superpower_path(superpower_1.id)
+    visit admin_superpower_path(superpower_1.id)
 
     click_link "Delete"
 
@@ -56,7 +56,7 @@ feature 'admin update superpowers' do
     user2 = FactoryBot.create(:user, role: 'admin')
     superpower_2 = FactoryBot.create(:superpower, user: user2)
 
-    visit superpower_path(superpower_2)
+    visit admin_superpower_path(superpower_2)
 
     expect(page).to_not have_content("Delete")
 

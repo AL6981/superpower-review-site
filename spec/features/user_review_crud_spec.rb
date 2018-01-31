@@ -10,6 +10,7 @@ feature 'user can do CRUD actions on reviews for a superpower' do
   let(:superpower_1) { FactoryBot.create(:superpower, user: superman) }
   let!(:review1) { Review.create(rating: 3, body: 'This is great', superpower: superpower_1, user: superman) }
   let!(:review2) { Review.create(rating: 2, body: 'This was not as good', user: batman, superpower: superpower_1) }
+
   scenario 'user clicks on the add review button and adds a review' do
     visit new_superpower_review_path(superpower_1)
 
@@ -18,28 +19,12 @@ feature 'user can do CRUD actions on reviews for a superpower' do
 
     click_button 'Submit Review'
 
-    expect(page).to have_content('flying')
-    expect(page).to have_content('It is awesome to fly')
-    expect(page).to have_content('3')
-    expect(page).to have_content('This is the best.')
-  end
-
-  scenario 'user sees all reviews of a superpower' do
-
-    visit superpower_path(superpower_1)
-
-    expect(page).to have_content('flying')
-    expect(page).to have_content('3')
-    expect(page).to have_content('This is great')
-    expect(page).to have_content('2')
-    expect(page).to have_content('This was not as good')
+    expect(page).to have_current_path("/superpowers/#{superpower_1.id}")
   end
 
   scenario 'user can update a review of a superpower' do
 
-    visit superpower_path(superpower_1)
-
-    click_link 'Edit Review'
+    visit edit_superpower_review_path(superpower_1, review1)
 
     expect(page).to have_content('Edit Review')
     expect(page).to have_content('Rating')
@@ -52,16 +37,11 @@ feature 'user can do CRUD actions on reviews for a superpower' do
 
     click_button 'Submit Review'
 
-    expect(page).to have_content('Rating')
-    expect(page).to have_content('Review')
-    expect(page).to have_content('2')
-    expect(page).to have_content('This is the best')
-
-    expect(page).to_not have_content('3')
-    expect(page).to_not have_content('This is great')
+    expect(page).to have_current_path("/superpowers/#{superpower_1.id}")
   end
 
-  scenario 'user should only be able to edit their own review' do
+  xscenario 'user should only be able to edit their own review' do
+    # this test will refer to a page now rendered in react - edit buttons not yet built out
     click_link('Sign Out')
     sign_in_as(batman)
 
@@ -75,7 +55,8 @@ feature 'user can do CRUD actions on reviews for a superpower' do
     expect(page).to have_content('This was not as good')
   end
 
-  scenario 'a user should be able to delete their review' do
+  xscenario 'a user should be able to delete their review' do
+    # this test will refer to a page now rendered in react - edit buttons not yet built out
     visit superpower_path(superpower_1)
 
     click_link 'Delete Review'

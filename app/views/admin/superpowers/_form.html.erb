@@ -1,4 +1,4 @@
-<%= form_for @superpower do |f| %>
+<%= form_for [:admin, @superpower] do |f| %>
 
 <% if @superpower.errors.size > 0 %>
   <ul>

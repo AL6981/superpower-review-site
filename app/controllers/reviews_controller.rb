@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = 'Review Added Successfully'
-      redirect_to superpower_path(@superpower)
+      redirect_to "/superpowers/#{@superpower.id}"
     else
       flash[:alert] = @review.errors.full_messages.join(", ")
       render :new
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 
     if @review.update_attributes(review_params)
       flash[:notice] = 'Review Updated Successfully'
-      redirect_to superpower_path(@superpower)
+      redirect_to "/superpowers/#{@superpower.id}"
     else
       flash[:alert] = @review.errors.full_messages.join(", ")
       render :edit
@@ -48,7 +48,7 @@ class ReviewsController < ApplicationController
 
     flash[:notice] = 'Review deleted'
 
-    redirect_to superpower_path(@superpower)
+    redirect_to "/superpowers/#{@superpower.id}"
   end
 
   private
