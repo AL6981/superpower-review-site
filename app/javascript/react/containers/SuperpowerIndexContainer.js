@@ -18,17 +18,6 @@ class SuperpowerIndexContainer extends Component {
     })
   }
 
-  addNewSuperpower(formPayload) {
-    fetch('/api/v1/superpowers', {
-      method: 'POST',
-      body: JSON.stringify(formPayload)
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({superpowers: body})
-    })
-  }
-
   render() {
     let superpowers = this.state.superpowers.map(superpower=> {
       return(

@@ -1,59 +1,72 @@
 import React, { Component } from 'react';
-import NameField from '../components/NameField'
+import RatingField from '../components/RatingField'
 import BodyField from '../components/BodyField'
 
 class ReviewFormContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      superpowerName: '',
-      superpowerBody: ''
+      reviewRating: null,
+      reviewBody: ''
     }
-    this.handleFormNameChange=this.handleFormNameChange.bind(this)
+    this.handleFormRatingChange=this.handleFormRatingChange.bind(this)
     this.handleFormBodyChange=this.handleFormBodyChange.bind(this)
     this.handleFormSubmit=this.handleFormSubmit.bind(this)
     this.handleClearForm=this.handleClearForm.bind(this)
   }
 
-  handleFormNameChange(event){
-    this.setState({superpowerName: event.target.value})
+  handleFormRatingChange(event){
+    let value = event.target.value
+    let numValue = parseInt(value)
+    this.setState({reviewRating: numValue})
   }
 
   handleFormBodyChange(event){
-    this.setState({superpowerBody: event.target.value})
+    this.setState({reviewBody: event.target.value})
   }
 
   handleFormSubmit(event){
     event.preventDefault()
     let formPayload = {
-      name: this.state.superpowerName,
-      body: this.state.superpowerBody
+      rating: this.state.reviewRating,
+      body: this.state.reviewBody
     }
-    this.props.addNewSuperpower(formPayload)
+    this.props.addNewReview(formPayload)
     this.handleClearForm(event)
   }
 
   handleClearForm(event){
     event.preventDefault()
     this.setState({
-      superpowerName: '',
-      superpowerBody: ''
+      reviewRating: null,
+      reviewBody: ''
     })
   }
 
   render() {
     return(
-      <form className="new-superpower-form callout">
-        <NameField
-          content={this.state.superpowerName}
-          label="Superpower Name"
-          name="superpower-name"
-          handleFormNameChange={this.handleFormNameChange}
+      <form className="new-review-form panel">
+        <RatingField
+          label="1 star"
+          value={1}
+          checkedValue={this.state.reviewRating}
+          onChange={this.handleFormRatingChange}
+        />
+        <RatingField
+          label="2 stars"
+          value={2}
+          checkedValue={this.state.reviewRating}
+          onChange={this.handleFormRatingChange}
+        />
+        <RatingField
+          label="3 stars"
+          value={3}
+          checkedValue={this.state.reviewRating}
+          onChange={this.handleFormRatingChange}
         />
         <BodyField
-          content={this.state.superpowerBody}
-          label="Superpower Body"
-          name="superpower-body"
+          content={this.state.reviewBody}
+          label="Write a Review"
           handleFormBodyChange={this.handleFormBodyChange}
         />
 

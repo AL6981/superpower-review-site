@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :superpowers do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:edit, :update, :destroy]
   end
-
-  resources :reviews, only: [:edit, :update, :destroy]
 
   namespace :admin do
     resources :users
@@ -14,7 +12,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :superpowers, only: [:index, :show]
+      resources :superpowers, only: [:index, :show] do
+        resources :reviews, only: [:create, :index]
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

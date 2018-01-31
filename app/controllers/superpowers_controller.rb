@@ -2,12 +2,10 @@ class SuperpowersController < ApplicationController
   before_action :authorize_user?, except: [:index, :show]
 
   def index
-    @superpowers = Superpower.all
   end
 
   def show
-    @superpower = Superpower.find(params[:id])
-    @reviews = @superpower.reviews
+
   end
 
   def new
