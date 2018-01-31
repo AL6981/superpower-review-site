@@ -1,4 +1,4 @@
-import SuperpowerDetailTile from '../../app/javascript/react/components/SuperpowerDetailTile';
+import SuperpowerDetailTile from '../../../app/javascript/react/components/SuperpowerDetailTile';
 
 describe('SuperpowerDetailTile', () => {
   let wrapper;
