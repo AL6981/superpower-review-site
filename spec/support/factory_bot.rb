@@ -13,10 +13,4 @@ FactoryBot.define do
     description 'It is awesome to fly'
     association :user, factory: :user
   end
-  #
-  # factory :review do
-  #   rating 3
-  #   body 'this is a review'
-  #   association :superpower, factory: :superpower
-  # end
 end
