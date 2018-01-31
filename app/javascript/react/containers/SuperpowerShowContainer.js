@@ -28,12 +28,17 @@ class SuperpowerShowContainer extends React.Component {
 
   addNewReview(formPayload) {
     let superpowerId = this.props.params.id
-
     fetch(`/api/v1/superpowers/${superpowerId}/reviews`, {
+      credentials: 'same-origin',
+      header: {
+       'Content-Type': 'application/json',
+       'X-Requested-With': 'XMLHttpRequest',
+       'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+      },
       method: 'POST',
       body: JSON.stringify(formPayload)
     })
-    .then(resp => {debugger})
+    // .then(resp => {debugger})
     .then(response => response.json())
     .then(body => {
       this.setState({reviews: body})
