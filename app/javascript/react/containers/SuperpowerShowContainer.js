@@ -36,8 +36,7 @@ class SuperpowerShowContainer extends React.Component {
         <ReviewsContainer
           reviews={this.state.reviews}
         />
-        <ReviewFormContainer />
-      </div>  
+      </div>
     )
   }
 }
