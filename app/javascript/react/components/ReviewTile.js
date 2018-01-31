@@ -3,9 +3,13 @@ import React from 'react';
 const ReviewTile = props => {
   return(
     <div className="review-tile panel">
-      Rating: {props.rating}
+      <div className="review-rating">
+        Rating: {props.rating}
+      </div>
       <br />
-      Review: {props.body}
+      <div className="rating-body">
+        Review: {props.body}
+      </div>
     </div>
   )
 }
