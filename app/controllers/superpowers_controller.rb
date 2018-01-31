@@ -1,6 +1,12 @@
 class SuperpowersController < ApplicationController
   before_action :authorize_user?
 
+  def index
+  end
+
+  def show
+  end
+
   def new
     @superpower = Superpower.new
   end
