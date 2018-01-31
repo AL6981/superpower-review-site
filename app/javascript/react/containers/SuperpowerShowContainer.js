@@ -1,6 +1,7 @@
 import React from 'react';
 import SuperpowerDetailTile from '../components/SuperpowerDetailTile'
 import ReviewsContainer from './ReviewsContainer'
+import ReviewFormContainer from './ReviewFormContainer'
 
 
 class SuperpowerShowContainer extends React.Component {
@@ -11,6 +12,7 @@ class SuperpowerShowContainer extends React.Component {
       description: '',
       reviews: []
     }
+    this.addNewReview = this.addNewReview.bind(this)
   }
 
   componentDidMount() {
@@ -26,6 +28,24 @@ class SuperpowerShowContainer extends React.Component {
     })
   }
 
+  addNewReview(formPayload) {
+    let superpowerId = this.props.params.id
+    fetch(`/api/v1/superpowers/${superpowerId}/reviews`, {
+      credentials: 'same-origin',
+      header: {
+       'Content-Type': 'application/json',
+       'X-Requested-With': 'XMLHttpRequest'
+      },
+      method: 'POST',
+      body: JSON.stringify(formPayload)
+    })
+    .then(response => response.json())
+    .then(body => console.log(body))
+    .then(body => {
+      this.setState({reviews: body})
+    })
+  }
+
   render() {
     return(
       <div>Hello from superpower show page
@@ -35,6 +55,9 @@ class SuperpowerShowContainer extends React.Component {
         />
         <ReviewsContainer
           reviews={this.state.reviews}
+        />
+        <ReviewFormContainer
+          addNewReview={this.addNewReview}
         />
       </div>
     )
