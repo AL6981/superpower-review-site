@@ -1,0 +1,11 @@
+<h2><%=@superpower.name%></h2>
+
+<div><%=@superpower.description%></div>
+
+
+<%if !current_user.nil? && current_user.admin? %>
+  <%= link_to 'Edit', edit_admin_superpower_path(@superpower) %>
+  <%= link_to 'Delete', [:admin, @superpower], method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
+
+<%= link_to 'View all superpowers', admin_superpowers_path %>

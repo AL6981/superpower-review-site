@@ -15,7 +15,7 @@ feature 'admin can add superpowers' do
 
   scenario 'admin submit completed form' do
 
-    visit new_superpower_path(superpower_1)
+    visit new_admin_superpower_path
 
     fill_in 'Superpower', with: superpower_1.name
     fill_in 'Description', with: superpower_1.description
@@ -29,7 +29,7 @@ feature 'admin can add superpowers' do
 
   scenario 'admin can not submit blank superpower name' do
 
-    visit new_superpower_path(superpower_2)
+    visit new_admin_superpower_path
 
     fill_in 'Description', with: superpower_2.description
 
@@ -40,7 +40,7 @@ feature 'admin can add superpowers' do
 
   scenario 'admin can not submit blank superpower description' do
 
-    visit new_superpower_path(superpower_3)
+    visit new_admin_superpower_path
 
     fill_in 'Superpower', with: superpower_3.name
 
@@ -53,8 +53,8 @@ feature 'admin can add superpowers' do
     click_on 'Sign Out'
     sign_in_as(user2)
 
-    visit new_superpower_path
+    visit new_admin_superpower_path
 
-    expect(page).to have_content('Unauthorized access') 
+    expect(page).to have_content('Unauthorized access')
   end
 end
