@@ -5,7 +5,10 @@ class Api::V1::SuperpowersController < ApplicationController
   end
 
   def show
-    render json: Superpower.find(params[:id])
+    @superpower = Superpower.find(params[:id])
+    render json: {
+      superpower: @superpower,
+      reviews: @superpower.reviews
+    }
   end
-
 end
