@@ -1,5 +1,5 @@
 class Api::V1::ReviewsController < ApiController
-  # skip_before_action :verify_authenticity_token
+
   def index
     render json: Review.all
   end
@@ -17,12 +17,15 @@ class Api::V1::ReviewsController < ApiController
     superpower = Superpower.find(params[:superpower_id])
     parsed_review = JSON.parse(request.body.read)
     review = Review.new(rating: parsed_review["rating"], body: parsed_review["body"])
+
     # review = Review.new(review_params)
     review.user = current_user
     review.superpower = superpower
-    # binding.pry
 
-    if review.save
+    if current_user.nil?
+      render status: 401
+    elsif review.save
+      # binding.pry
       flash[:notice] = 'Review Added Successfully'
       render json: superpower.reviews
     else

@@ -32,14 +32,13 @@ class SuperpowerShowContainer extends React.Component {
       credentials: 'same-origin',
       header: {
        'Content-Type': 'application/json',
-       'X-Requested-With': 'XMLHttpRequest',
-       'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+       'X-Requested-With': 'XMLHttpRequest'
       },
       method: 'POST',
       body: JSON.stringify(formPayload)
     })
-    // .then(resp => {debugger})
     .then(response => response.json())
+    .then(body => console.log(body))
     .then(body => {
       this.setState({reviews: body})
     })

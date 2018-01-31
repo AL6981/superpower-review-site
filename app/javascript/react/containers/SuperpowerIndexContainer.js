@@ -10,16 +10,15 @@ class SuperpowerIndexContainer extends Component {
   }
 
   componentDidMount() {
-    console.log('component mounted')
     fetch('/api/v1/superpowers')
     .then(response => response.json())
     .then(body => {
-      this.setState({superpowers: body})
+      this.setState({superpowers: body.superpowers})
     })
   }
 
   render() {
-    let superpowers = this.state.superpowers.map(superpower=> {
+    let superpowers = this.state.superpowers.map(superpower => {
       return(
         <SuperpowerTile
           key={superpower.id}
