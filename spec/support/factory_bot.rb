@@ -13,6 +13,4 @@ FactoryBot.define do
     description 'It is awesome to fly'
     association :user, factory: :user
   end
-
-
 end
