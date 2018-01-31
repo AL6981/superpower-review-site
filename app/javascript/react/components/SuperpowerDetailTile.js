@@ -13,11 +13,11 @@ const SuperpowerDetailTile = (props) => {
       </div>
 
       <div className="superpower-name">
-        Name {props.name}
+        {props.name}
       </div>
 
       <div className="superpower-description">
-        Details {props.description}
+        {props.description}
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import SuperpowerDetailTile from '../components/SuperpowerDetailTile'
 import ReviewsContainer from './ReviewsContainer'
-import ReviewFormContainer from './ReviewFormContainer'
+
 
 class SuperpowerShowContainer extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class SuperpowerShowContainer extends React.Component {
           reviews={this.state.reviews}
         />
         <ReviewFormContainer />
-      </div>
+      </div>  
     )
   }
 }
