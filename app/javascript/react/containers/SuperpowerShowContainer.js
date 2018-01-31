@@ -40,9 +40,8 @@ class SuperpowerShowContainer extends React.Component {
       body: JSON.stringify(formPayload)
     })
     .then(response => response.json())
-    .then(body => console.log(body))
     .then(body => {
-      this.setState({reviews: body})
+      this.setState({reviews: body.reviews})
     })
   }
 
