@@ -7,7 +7,7 @@ const ReviewTile = props => {
         Rating: {props.rating}
       </div>
       <br />
-      <div className="rating-body">
+      <div className="review-body">
         Review: {props.body}
       </div>
     </div>

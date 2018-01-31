@@ -15,7 +15,7 @@ describe('ReviewTile', () => {
   it('renders a div element with class name of "review-tile" and have rating and body text', () => {
     expect(wrapper.find('.review-tile')).toBePresent();
     expect(wrapper.find('.review-tile')).toMatchSelector('div');
-    expect(wrapper.find('.review-rating').text()).toIncludeText('2')
-    expect(wrapper.find('.review-body').text()).toIncludeText('This is a review')
+    expect(wrapper.find('.review-rating')).toIncludeText('2')
+    expect(wrapper.find('.review-body')).toIncludeText('This is a review')
   });
 });
