@@ -1,8 +1,16 @@
 import React from 'react';
 
-const ReviewTile = (props) => {
+const ReviewTile = props => {
   return(
-    <div>hello from review tile</div>
+    <div className="review-tile panel">
+      <div className="review-rating">
+        Rating: {props.rating}
+      </div>
+      <br />
+      <div className="review-body">
+        Review: {props.body}
+      </div>
+    </div>
   )
 }
 
