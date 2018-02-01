@@ -5,7 +5,7 @@ const SuperpowerDetailTile = (props) => {
     <div className="show-container">
       <div className="detail-container">
         <div className="superpower-pic">
-          <img src="https://imgur.com/a/TegN9"/>
+          <img src='/assets/callingheroes.jpg'/>
         </div>
         <div className="sp-name">
           {props.name}

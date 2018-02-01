@@ -1,6 +1,6 @@
 @font-face {
-	font-family: 'SFSlapstickComicOblique';
-  src:font-url('fonts/SFSlapstickComic Oblique.ttf');
+ font-family: 'SFSlapstickComicOblique';
+  src:font-url('../fonts/SFSlapstickComic Oblique.ttf');
 }
 
 .show-container {
@@ -20,7 +20,7 @@
   grid-gap: 20px;
   padding: 15px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 75px);
+  grid-template-rows: repeat(2, 90px);
   margin: 5px;
 }
 
@@ -28,17 +28,18 @@
   grid-column: 1;
   grid-row: span 2;
   border: 4px ridge grey;
-  justify-content: center;
+  justify-content: centergit;
   align-self: center;
 }
 
 .sp-name {
-  font-family: 'SFSlapstickComicOblique';
+  font-family: 'Bangers', cursive;
+  font-size: 3em;
   border: 4px ridge #ADADAD;
   background-color: #E0E0E0;
   text-align: center;
   grid-row: span 1;
-    min-height: 75px;
+  min-height: 75px;
 }
 
 .sp-desc {
