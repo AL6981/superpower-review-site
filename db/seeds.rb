@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create(email: 'user1@email.com')
+user1 = User.create!(email: 'user1@email.com', password: 'password')
 
 superpower1 = Superpower.create!(name: 'Invisibility', description: 'User can render themselves unseen by the naked eye and become invisible in visible spectrum. The user can move about an environment unseen by others and act without being observed. Some users can choose to let certain people see them, while staying invisible to others.')
 superpower2 = Superpower.create!(name: 'Regenerative Healing Factor', description: 'The user can rapidly regenerate. In other words, they recreate lost or damaged tissues, organs and limbs, sometimes slowing, or even stopping, ageing. The rate and amount of healing varies widely; some can regrow missing limbs, others must put the limb back in place for rapid regeneration. They are generally in very good physical shape as their bodies are constantly reverting to healthy state, granting them nigh-inexhaustible stamina and vitality.')

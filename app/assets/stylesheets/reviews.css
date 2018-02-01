@@ -1,0 +1,24 @@
+.superpower-name {
+  border: solid;
+}
+
+.superpower-pic {
+  border: thick double;
+}
+
+.superpower-description {
+  border: solid;
+}
+
+.superpower-tile {
+  border: solid;
+  border-color: red;
+  min-height: 100px;
+
+}
+
+.superpower-details {
+  border: solid;
+  border-color: blue;
+
+}
