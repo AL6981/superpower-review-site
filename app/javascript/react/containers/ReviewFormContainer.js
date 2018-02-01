@@ -49,7 +49,7 @@ class ReviewFormContainer extends Component {
         <div className="small-12 medium-12 large-12 columns">
           <form className="new-review-form panel">
             <fieldset>
-              <legend>Add Review</legend>
+              <div className="legend">Add Review</div>
               <RatingField
                 label=" 1 Star"
                 value={1}
@@ -76,8 +76,8 @@ class ReviewFormContainer extends Component {
 
               <div className="review-form-button">
                 <div className="button-group round even-2">
-                  <button className="button">Clear</button>
-                  <input className="button" id="submit" type="submit" value="Submit" onClick={this.handleFormSubmit}/>
+                  <button className="clear-button" id="clear-button">Clear</button>
+                  <input className="button" id="review-submit" type="submit" value="Submit" onClick={this.handleFormSubmit}/>
                 </div>
               </div>
             </fieldset>

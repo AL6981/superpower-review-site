@@ -12,6 +12,7 @@
   background-color: #334773;
   border: 10px ridge grey;
   align-self: stretch;
+  border-radius: 5px;
 }
 
 .nav-logo {

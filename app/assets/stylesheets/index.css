@@ -18,6 +18,7 @@ body {
 }
 
 .superpower-name {
+  margin: 5px;
   grid-column: span 1;
   font-family: 'Bangers', cursive;
   font-size: 2em;

@@ -1,9 +1,10 @@
 .reviews {
   padding: 3%;
-  background-color: #AAD2E6;
+  background-color: #A2B5CD;
+  border: 10px ridge grey;
   margin-top: 3%;
   margin-bottom: 10%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .button:hover {
@@ -12,15 +13,60 @@
   box-shadow: 0 0 10px #ccc;
 }
 
-.review-tile {
-  border-radius: 10px;
+#review-submit {
+  background-color: #334773;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+}
+
+#clear-button {
+  background-color: #334773;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+}
+
+.review-tile-component {
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  border: 4px ridge #ADADAD;
+  background-color: #E0E0E0;
 }
 
 .new-review-form {
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.review-body {
+  background-color: #E0E0E0;
 }
 
 .rating-field {
   display: inline;
   padding: 2%;
+}
+
+.new-review-form {
+  border: 4px ridge #ADADAD;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #E0E0E0;
+}
+
+.fa {
+  color: #EB1B28;
+}
+
+.review-rating {
+  font-family: 'Bangers', cursive;
+  font-size: 25px;
+}
+
+.legend {
+  font-family: 'Bangers', cursive;
+  font-size: 40px;
+  padding-bottom: 20px;
+  text-shadow: 4px 4px 2px #ADADAD;
+}
+
+a:link {
+
 }

@@ -12,11 +12,13 @@
   margin-bottom: 40px;
   grid-template-columns: 1fr;
   background-color: #A2B5CD;
+  border-radius: 5px;
 }
 
 .detail-container {
   display: grid;
   border: 10px ridge grey;
+  border-radius: 5px;
   grid-gap: 20px;
   padding: 15px;
   grid-template-columns: repeat(2, 1fr);
