@@ -28,7 +28,7 @@
   grid-column: 1;
   grid-row: span 2;
   border: 4px ridge grey;
-  justify-content: centergit;
+  justify-content: center;
   align-self: center;
 }
 
@@ -50,10 +50,4 @@
   grid-column: 2;
   grid-row: span 1;
   min-height: 75px;
-}
-
-.superpower-tile {
-  border: solid;
-  border-color: red;
-  min-height: 100px;
 }

@@ -2,23 +2,24 @@ body {
   background-color: #5FA2FF;
 }
 
-.tile-container {
+.power-container {
   display: grid;
-  grid-gap: 15px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-
-.superpower-tile {
-  border: 1px solid #0078BE;
-  grid-column: span 1;
-  font-family: 'Ubuntu', sans-serif;
-  padding: 40px 60px;
-  text-align: center;
+  grid-template-rows: repeat(6, 100px);
+  margin: 25px;
+  grid-gap: 20px;
   border-radius: 5px;
-  border-width: 6px;
 }
 
-.p-tag {
-  font-size: 20px;
+.tile-container {
+  border: 4px ridge grey;
+  text-align: center;
+  min-height: 100px;
+}
+
+.superpower-name {
+  grid-column: span 1;
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
+  color: black;
 }
