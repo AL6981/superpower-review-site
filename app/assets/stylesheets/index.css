@@ -1,0 +1,22 @@
+body {
+  background-color: #5FA2FF;
+}
+
+
+.header {
+  border: 1px;
+  color: black;
+  background-color: #5FA2FF;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 350px;
+}
+
+.superpower-tile {
+  border: 1px solid #0078BE;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 40px 60px;
+  text-align: center;
+  font-weight: 1000px;
+  border-radius: 5px;
+  border-width: 6px;
+}
