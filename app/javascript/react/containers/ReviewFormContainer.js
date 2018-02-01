@@ -77,7 +77,7 @@ class ReviewFormContainer extends Component {
               <div className="review-form-button">
                 <div className="button-group round even-2">
                   <button className="button">Clear</button>
-                  <input className="button" type="submit" value="Submit" onClick={this.handleFormSubmit}/>
+                  <input className="button" id="submit" type="submit" value="Submit" onClick={this.handleFormSubmit}/>
                 </div>
               </div>
             </fieldset>

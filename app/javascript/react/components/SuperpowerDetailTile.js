@@ -3,7 +3,6 @@ import React from 'react';
 const SuperpowerDetailTile = (props) => {
   return(
     <div>
-      <div>hello from superpower detail tile</div>
 
       <div className="superpower-tile small-10 medium-10 large-10 columns">
         <div className="row">
