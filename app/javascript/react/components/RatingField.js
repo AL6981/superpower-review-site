@@ -2,9 +2,9 @@ import React from 'react';
 
 const RatingField = (props) => {
   return (
-    <label >
+    <label className="rating-field">
       <input
-        type="radio"
+        type="checkbox"
         value={props.value}
         checked={props.checkedValue == props.value}
         onChange={props.onChange}

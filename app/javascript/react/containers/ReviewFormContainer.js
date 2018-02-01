@@ -46,24 +46,24 @@ class ReviewFormContainer extends Component {
   render() {
     return(
       <div className="row">
-        <div className="small-10 medium-10 large-10 columns">
+        <div className="small-12 medium-12 large-12 columns">
           <form className="new-review-form panel">
             <fieldset>
               <legend>Add Review</legend>
               <RatingField
-                label=" 1 star"
+                label=" 1 Star"
                 value={1}
                 checkedValue={this.state.reviewRating}
                 onChange={this.handleFormRatingChange}
               />
               <RatingField
-                label=" 2 stars"
+                label=" 2 Stars"
                 value={2}
                 checkedValue={this.state.reviewRating}
                 onChange={this.handleFormRatingChange}
               />
               <RatingField
-                label=" 3 stars"
+                label=" 3 Stars"
                 value={3}
                 checkedValue={this.state.reviewRating}
                 onChange={this.handleFormRatingChange}
