@@ -1,0 +1,20 @@
+.button.admin {
+  background-color: #334773;
+  /* color: #FFFFFF; */
+}
+.button.admin:hover {
+ -moz-box-shadow: 0 0 10px #ccc;
+ -webkit-box-shadow: 0 0 10px #ccc;
+ box-shadow: 0 0 10px #ccc;
+}
+/* .button.admin:hover,
+.button.admin:focus {
+  background-color: darken($buttoncolor, 5%);
+} */
+
+.admin-button-group {
+  margin: 10px;
+}
+.admin-panel {
+  width: 75%;
+}
