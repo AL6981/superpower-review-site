@@ -29,7 +29,7 @@ class SuperpowerIndexContainer extends Component {
     })
 
     return(
-      <div>
+      <div className="power-container">
         {superpowers}
       </div>
     )
