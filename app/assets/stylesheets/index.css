@@ -12,7 +12,7 @@ body {
 }
 
 .tile-container {
-  border: 4px ridge grey;
+  border: 4px ridge #ADADAD;
   text-align: center;
   min-height: 100px;
 }
@@ -22,4 +22,5 @@ body {
   font-family: 'Bangers', cursive;
   font-size: 2em;
   color: black;
+  text-shadow: 4px 4px 2px #ADADAD;
 }
