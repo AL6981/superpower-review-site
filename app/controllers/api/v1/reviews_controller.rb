@@ -4,7 +4,6 @@ class Api::V1::ReviewsController < ApiController
     superpower = Superpower.find(params[:superpower_id])
     parsed_review = JSON.parse(request.body.read)
     review = Review.new(rating: parsed_review["rating"], body: parsed_review["body"])
-
     review.user = current_user
     review.superpower = superpower
 
