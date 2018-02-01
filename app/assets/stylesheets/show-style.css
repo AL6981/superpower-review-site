@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'SFSlapstickComicOblique';
+  src:font-url('fonts/SFSlapstickComic Oblique.ttf');
+}
+
+.show-container {
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 40px;
+  grid-template-columns: 1fr;
+  background-color: #A2B5CD;
+}
+
+.detail-container {
+  display: grid;
+  border: 10px ridge grey;
+  grid-gap: 20px;
+  padding: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 75px);
+  margin: 5px;
+}
+
+.superpower-pic {
+  grid-column: 1;
+  grid-row: span 2;
+  border: 4px ridge grey;
+  justify-content: center;
+  align-self: center;
+}
+
+.sp-name {
+  font-family: 'SFSlapstickComicOblique';
+  border: 4px ridge #ADADAD;
+  background-color: #E0E0E0;
+  text-align: center;
+  grid-row: span 1;
+    min-height: 75px;
+}
+
+.sp-desc {
+  border: 4px ridge #ADADAD;
+  background-color: #E0E0E0;
+  text-align: center;
+  align-self: center;
+  grid-column: 2;
+  grid-row: span 1;
+  min-height: 75px;
+}
+
+.superpower-tile {
+  border: solid;
+  border-color: red;
+  min-height: 100px;
+}

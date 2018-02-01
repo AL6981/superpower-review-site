@@ -52,12 +52,14 @@ class SuperpowerShowContainer extends React.Component {
           name={this.state.name}
           description={this.state.description}
         />
-        <ReviewsContainer
+        <div className="reviews-container">
+          <ReviewsContainer
           reviews={this.state.reviews}
-        />
-        <ReviewFormContainer
+          />
+          <ReviewFormContainer
           addNewReview={this.addNewReview}
-        />
+          />
+        </div>
       </div>
     )
   }
