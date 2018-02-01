@@ -8,10 +8,6 @@ const SuperpowerDetailTile = (props) => {
         <img src="#" alt="Picture of the selected superpower" />image tag
       </div>
 
-      <div className="avg-rating">
-        average rating
-      </div>
-
       <div className="superpower-name">
         {props.name}
       </div>

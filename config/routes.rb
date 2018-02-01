@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :superpowers, only: [:index, :show]
+      resources :superpowers, only: [:index, :show] do
+        resources :reviews, only: [:create]
+      end
     end
   end
 

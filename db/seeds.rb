@@ -6,5 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create(email: 'user1@email.com')
-Superpower.find_or_create_by!( name: 'Super Speed', description: 'I like to go really fast!', user: user1)
+user1 = User.find_or_create_by!(email: 'user1@email.com', encrypted_password: 'password')
+speed = Superpower.find_or_create_by!( name: 'Super Speed', description: 'I like to go really fast!', user: user1)
+
+Review.find_or_create_by!(rating: 2, body: 'Super cool, super fast', superpower: speed, user: user1)
+Review.find_or_create_by!(rating: 3, body: 'Tooooo fassssttttt', superpower: speed, user: user1)

@@ -17,11 +17,6 @@ describe('SuperpowerDetailTile', () => {
     expect(wrapper.find('.superpower-pic')).toMatchSelector('div');
   });
 
-  it('renders a div element with class name of "avg-rating"', () => {
-    expect(wrapper.find('.avg-rating')).toBePresent();
-    expect(wrapper.find('.avg-rating')).toMatchSelector('div');
-  });
-
   it('renders a div element with class name of "superpower-name and the text"', () => {
     expect(wrapper.find('.superpower-name')).toBePresent();
     expect(wrapper.find('.superpower-name')).toMatchSelector('div');
