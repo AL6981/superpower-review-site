@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :superpowers, only: [] do
-    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+    resources :reviews, only: [:edit, :update, :destroy]
   end
 
   namespace :admin do
