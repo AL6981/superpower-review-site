@@ -72,7 +72,7 @@ class ReviewFormContainer extends Component {
 
         <div className="button-group">
           <button className="button">Clear</button>
-          <input className="button" type="submit" value="Submit" onClick={this.handleFormSubmit}/>
+          <input className="button" type="submit" value="Submit Review" onClick={this.handleFormSubmit}/>
         </div>
       </form>
     )

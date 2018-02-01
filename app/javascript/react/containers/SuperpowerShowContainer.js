@@ -47,7 +47,7 @@ class SuperpowerShowContainer extends React.Component {
 
   render() {
     return(
-      <div>Hello from superpower show page
+      <div>
         <SuperpowerDetailTile
           name={this.state.name}
           description={this.state.description}
