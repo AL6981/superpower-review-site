@@ -48,17 +48,21 @@ class SuperpowerShowContainer extends React.Component {
   render() {
     return(
       <div>
-        <SuperpowerDetailTile
-          name={this.state.name}
-          description={this.state.description}
-        />
-        <div className="reviews-container">
-          <ReviewsContainer
-          reviews={this.state.reviews}
+        <div>
+          <SuperpowerDetailTile
+            name={this.state.name}
+            description={this.state.description}
           />
-          <ReviewFormContainer
-          addNewReview={this.addNewReview}
-          />
+        </div>
+        <div className="row">
+          <div className="reviews large-10 columns">
+            <ReviewsContainer
+              reviews={this.state.reviews}
+            />
+            <ReviewFormContainer
+              addNewReview={this.addNewReview}
+            />
+          </div>
         </div>
       </div>
     )
