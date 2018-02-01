@@ -12,11 +12,6 @@ describe('SuperpowerDetailTile', () => {
     )
   });
 
-  it('renders a div element with class name of "superpower-pic"', () => {
-    expect(wrapper.find('.superpower-pic')).toBePresent();
-    expect(wrapper.find('.superpower-pic')).toMatchSelector('div');
-  });
-
   it('renders a div element with class name of "superpower-name and the text"', () => {
     expect(wrapper.find('.superpower-name')).toBePresent();
     expect(wrapper.find('.superpower-name')).toMatchSelector('div');

@@ -11,16 +11,6 @@ feature 'user can do CRUD actions on reviews for a superpower' do
   let!(:review1) { Review.create(rating: 3, body: 'This is great', superpower: superpower_1, user: superman) }
   let!(:review2) { Review.create(rating: 2, body: 'This was not as good', user: batman, superpower: superpower_1) }
 
-  scenario 'user clicks on the add review button and adds a review' do
-    visit "/superpowers/#{superpower_1.id}"
-
-    choose('3')
-    fill_in 'Review', with: 'This is the best.'
-
-    click_button 'Submit Review'
-
-    expect(page).to have_current_path("/superpowers/#{superpower_1.id}")
-  end
 
   scenario 'user can update a review of a superpower' do
 
