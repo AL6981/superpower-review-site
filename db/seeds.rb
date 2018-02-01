@@ -8,9 +8,6 @@
 
 user1 = User.create(email: 'user1@email.com')
 
-Superpower.find_or_create_by!( name: 'Super Speed', description: 'I like to go really fast!', user: user1)
-
-
 superpower1 = Superpower.create!(name: 'Invisibility', description: 'User can render themselves unseen by the naked eye and become invisible in visible spectrum. The user can move about an environment unseen by others and act without being observed. Some users can choose to let certain people see them, while staying invisible to others.')
 superpower2 = Superpower.create!(name: 'Regenerative Healing Factor', description: 'The user can rapidly regenerate. In other words, they recreate lost or damaged tissues, organs and limbs, sometimes slowing, or even stopping, ageing. The rate and amount of healing varies widely; some can regrow missing limbs, others must put the limb back in place for rapid regeneration. They are generally in very good physical shape as their bodies are constantly reverting to healthy state, granting them nigh-inexhaustible stamina and vitality.')
 superpower3 = Superpower.create!(name: 'Replication', description: 'User can instantly and perfectly replicate themselves and/or targets which can be objects or living beings, numerous times, while usually being able to recombine the clones. Most users have both of these abilities (if subconsciously), copying their clothes/equipment along with their body. Original target will normally be able to maintain control over all copies.')
