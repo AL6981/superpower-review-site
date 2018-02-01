@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'SFSlapstickComic';
+  src: url('fonts/SFSlapstickComic.ttf'), format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: #334773;
+  border: 10px ridge grey;
+  align-self: stretch;
+}
+
+.nav-logo {
+  background-image: image('SupLogo.png');
+  margin: 5px;
+  grid-column: span 3;
+  align-self: center;
+  order: 1;
+}
+
+.nav-name {
+  margin: 5px;
+  grid-column: span 6;
+  text-align: center;
+  align-self: center;
+  font-family: 'Ubuntu', sans-serif;
+  order: 2;
+}
+
+.nav-links {
+  grid-column: span 3;
+  align-self: center;
+  font-family: 'Ubuntu', sans-serif;
+  order: 3;
+}
+
+a:link {
+  color: white;
+}
+a:visited {
+  color: grey;
+}
+a:visited {
+  color: white;
+}
+
+
+.nav-si {
+  border: 5px dashed  grey;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  align-self: center;
+}
+
+.nav-su {
+  border: 5px dotted grey;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  align-self: center;
+}
+
+.nav-so {
+  border: 5px solid grey;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  align-self: center;
+}
