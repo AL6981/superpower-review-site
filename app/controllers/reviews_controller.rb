@@ -1,26 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
   before_action :authorize_user?, only: [:edit, :update, :destroy]
-
-  def new
-    @superpower = Superpower.find(params[:superpower_id])
-    @review = Review.new
-  end
-
-  def create
-    @superpower = Superpower.find(params[:superpower_id])
-    @review = Review.new(review_params)
-    @review.user = current_user
-    @review.superpower = @superpower
-
-    if @review.save
-      flash[:notice] = 'Review Added Successfully'
-      redirect_to "/superpowers/#{@superpower.id}"
-    else
-      flash[:alert] = @review.errors.full_messages.join(", ")
-      render :new
-    end
-  end
 
   def edit
     @review = Review.find(params[:id])

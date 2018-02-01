@@ -11,16 +11,6 @@ feature 'user can do CRUD actions on reviews for a superpower' do
   let!(:review1) { Review.create(rating: 3, body: 'This is great', superpower: superpower_1, user: superman) }
   let!(:review2) { Review.create(rating: 2, body: 'This was not as good', user: batman, superpower: superpower_1) }
 
-  scenario 'user clicks on the add review button and adds a review' do
-    visit new_superpower_review_path(superpower_1)
-
-    choose('3')
-    fill_in 'Review', with: 'This is the best.'
-
-    click_button 'Submit Review'
-
-    expect(page).to have_current_path("/superpowers/#{superpower_1.id}")
-  end
 
   scenario 'user can update a review of a superpower' do
 
@@ -45,7 +35,7 @@ feature 'user can do CRUD actions on reviews for a superpower' do
     click_link('Sign Out')
     sign_in_as(batman)
 
-    visit superpower_path(superpower_1)
+    visit "/superpowers/#{superpower_1.id}"
 
     click_link 'Edit Review'
 
@@ -57,7 +47,7 @@ feature 'user can do CRUD actions on reviews for a superpower' do
 
   xscenario 'a user should be able to delete their review' do
     # this test will refer to a page now rendered in react - edit buttons not yet built out
-    visit superpower_path(superpower_1)
+    visit "/superpowers/#{superpower_1.id}"
 
     click_link 'Delete Review'
 
