@@ -29,7 +29,7 @@ describe('ReviewFormContainer', () => {
 
   describe('handleFormSubmit', () => {
     it('should be invoked when the onClick property of the submit button is clicked', () => {
-      wrapper.find('input#submit').simulate('click');
+      wrapper.find('input#review-submit').simulate('click');
       expect(ReviewFormContainer.prototype.handleFormSubmit).toHaveBeenCalled();
       expect(addNewReview).toHaveBeenCalled();
     });

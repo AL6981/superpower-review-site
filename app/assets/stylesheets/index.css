@@ -1,0 +1,28 @@
+body {
+  background-color: #5FA2FF;
+}
+
+.power-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 100px);
+  margin: 25px;
+  grid-gap: 20px;
+  border-radius: 5px;
+}
+
+.tile-container {
+  border: 6px ridge #ADADAD;
+  text-align: center;
+  min-height: 100px;
+  background-color: #C7C7C7;
+}
+
+.superpower-name {
+  margin: 5px;
+  grid-column: span 1;
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
+  color: black;
+  text-shadow: 4px 4px 2px #ADADAD;
+}

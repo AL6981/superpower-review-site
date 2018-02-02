@@ -45,36 +45,45 @@ class ReviewFormContainer extends Component {
 
   render() {
     return(
-      <form className="new-review-form panel">
-        <RatingField
-          label="1 star"
-          value={1}
-          checkedValue={this.state.reviewRating}
-          onChange={this.handleFormRatingChange}
-        />
-        <RatingField
-          label="2 stars"
-          value={2}
-          checkedValue={this.state.reviewRating}
-          onChange={this.handleFormRatingChange}
-        />
-        <RatingField
-          label="3 stars"
-          value={3}
-          checkedValue={this.state.reviewRating}
-          onChange={this.handleFormRatingChange}
-        />
-        <BodyField
-          content={this.state.reviewBody}
-          label="Write a Review"
-          handleFormBodyChange={this.handleFormBodyChange}
-        />
+      <div className="row">
+        <div className="small-12 medium-12 large-12 columns">
+          <form className="new-review-form panel">
+            <fieldset>
+              <div className="legend">Add Review</div>
+              <RatingField
+                label=" 1 Star"
+                value={1}
+                checkedValue={this.state.reviewRating}
+                onChange={this.handleFormRatingChange}
+              />
+              <RatingField
+                label=" 2 Stars"
+                value={2}
+                checkedValue={this.state.reviewRating}
+                onChange={this.handleFormRatingChange}
+              />
+              <RatingField
+                label=" 3 Stars"
+                value={3}
+                checkedValue={this.state.reviewRating}
+                onChange={this.handleFormRatingChange}
+              />
+              <BodyField
+                content={this.state.reviewBody}
+                label="Write a Review"
+                handleFormBodyChange={this.handleFormBodyChange}
+              />
 
-        <div className="button-group">
-          <button className="button">Clear</button>
-          <input className="button" id="submit" type="submit" value="Submit Review" onClick={this.handleFormSubmit}/>
+              <div className="review-form-button">
+                <div className="button-group round even-2">
+                  <button className="clear-button" id="clear-button">Clear</button>
+                  <input className="button" id="review-submit" type="submit" value="Submit" onClick={this.handleFormSubmit}/>
+                </div>
+              </div>
+            </fieldset>
+          </form>
         </div>
-      </form>
+      </div>
     )
   }
 }

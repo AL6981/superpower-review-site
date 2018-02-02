@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 const SuperpowerTile = props => {
   return(
-    <div>
-      <p><Link to={`/superpowers/${props.id}`}>{props.name}</Link></p>
+    <div className="tile-container">
+      <Link to={`/superpowers/${props.id}`} className="superpower-name">{props.name}</Link>
     </div>
   )
 }
