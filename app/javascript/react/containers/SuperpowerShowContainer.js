@@ -46,6 +46,7 @@ class SuperpowerShowContainer extends React.Component {
   }
 
   render() {
+    let superpowerId = this.props.params.id
     return(
       <div>
         <div>
@@ -58,6 +59,7 @@ class SuperpowerShowContainer extends React.Component {
           <div className="reviews large-10 columns">
             <ReviewsContainer
               reviews={this.state.reviews}
+              superpowerId={superpowerId}
             />
             <ReviewFormContainer
               addNewReview={this.addNewReview}
