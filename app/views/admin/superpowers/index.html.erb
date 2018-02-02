@@ -1,6 +1,11 @@
-<div class="panel admin-panel">
-  <h2>Superpower Master List</h2>
-  <table>
+<h2 class="ru">Superpower Master List</h2>
+<%if !current_user.nil? && current_user.admin? %>
+<div class="add-power">
+  <%= link_to "Add new superpower", new_admin_superpower_path %>
+</div>
+<div class="admin-panel">
+  <% end %>
+  <table class="table">
     <tr>
       <th>Superpower</th>
       <th>Action</th>
@@ -20,7 +25,4 @@
       <% end %>
   </table>
 
-  <%if !current_user.nil? && current_user.admin? %>
-    <%= link_to "Add new superpower", new_admin_superpower_path %>
-  <% end %>
 </div>

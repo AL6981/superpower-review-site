@@ -1,2 +1,10 @@
-<h1>You are an admin.</h1>
-<h2>With great power, comes great responsibility</h2>
+
+<div class="admin-text-container">
+  <h1 class='admin-h1'>You are an administrator</h1>
+  <h3 class='admin-h3'>With great power, comes great responsibility</h3>
+</div>
+
+<div class="admin-links">
+  <div class="user-link"><%= link_to 'Users', admin_users_path %></div>
+  <div class="power-link"><%= link_to 'Superpowers', admin_superpowers_path %></div>
+</div>

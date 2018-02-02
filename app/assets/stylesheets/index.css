@@ -25,4 +25,6 @@ body {
   font-size: 2em;
   color: black;
   text-shadow: 4px 4px 2px #ADADAD;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
