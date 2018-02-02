@@ -1,0 +1,35 @@
+.field {
+  border: 6px ridge #ADADAD;
+  text-align: center;
+  background-color: #C7C7C7;
+  margin-left: 25px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+
+.actions {
+  width: 100px;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+  margin: 25px;
+  text-align: left;
+  align-content: center;
+}
+
+.h2 {
+  font-family: 'Bangers', cursive;
+  text-shadow: 4px 4px 2px #ADADAD;
+  text-align: center;
+  align-content: left;
+  padding-top: 20px;
+}
+
+.devise-link {
+  width: 200px;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 10px;
+  margin: 25px;
+  text-align: left;
+  align-content: center;
+}

@@ -1,13 +1,28 @@
-<h1>Superpower Master List</h1>
-
-<ul>
-  <% @superpowers.each do |superpower| %>
-    <li>
-      <%= link_to superpower.name, superpower_path(superpower.id) %></br>
-    </li>
-  <% end %>
-</ul>
-
+<h2 class="ru">Superpower Master List</h2>
 <%if !current_user.nil? && current_user.admin? %>
+<div class="add-power">
   <%= link_to "Add new superpower", new_admin_superpower_path %>
-<% end %>
+</div>
+<div class="admin-panel">
+  <% end %>
+  <table class="table">
+    <tr>
+      <th>Superpower</th>
+      <th>Action</th>
+    </tr>
+      <% @superpowers.each do |superpower| %>
+        <tr>
+          <td>
+            <%= link_to superpower.name, admin_superpower_path(superpower.id) %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_admin_superpower_path(superpower) %>
+          </td>
+          <td>
+            <%= link_to 'Delete', [:admin, superpower], method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+  </table>
+
+</div>

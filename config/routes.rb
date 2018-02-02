@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :superpowers
+    root "homepages#index"
+    get "*path", to: "homepages#index"
   end
 
   namespace :api do
