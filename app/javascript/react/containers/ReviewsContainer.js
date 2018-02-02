@@ -10,6 +10,7 @@ const ReviewsContainer = props => {
         id={review.id}
         rating={review.rating}
         body={review.body}
+        superpowerId={props.superpowerId}
       />
     )
   });

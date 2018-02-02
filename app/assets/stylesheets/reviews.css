@@ -25,6 +25,12 @@
   border-radius: 5px;
 }
 
+#review-edit {
+  background-color: #334773;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+}
+
 .review-tile-component {
   border-radius: 5px;
   font-family: 'Ubuntu', sans-serif;

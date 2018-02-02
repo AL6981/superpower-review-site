@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
 
     if !user_signed_in? || current_user != @review.user
       flash[:notice] = 'Unauthorized access'
-      redirect_to superpower_path(@superpower) and return
+      redirect_to new_user_session_path and return
     end
   end
 
