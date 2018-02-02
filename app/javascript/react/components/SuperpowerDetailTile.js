@@ -2,17 +2,19 @@ import React from 'react';
 
 const SuperpowerDetailTile = (props) => {
   return(
-    <div>
-      <div className="superpower-name">
-        {props.name}
-      </div>
-
-      <div className="superpower-description">
-        {props.description}
-      </div>
-
+    <div className="show-container">
+      <div className="detail-container">
+        <div className="superpower-pic">
+          <img src='/assets/callingheroes.jpg' id='show-pic'/>
+        </div>
+        <div className="sp-name">
+          {props.name}
+        </div>
+        <div className="sp-desc">
+          {props.description}
+        </div>
+        </div>
     </div>
-
   )
 }
 

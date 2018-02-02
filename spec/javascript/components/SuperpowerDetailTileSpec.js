@@ -12,15 +12,15 @@ describe('SuperpowerDetailTile', () => {
     )
   });
 
-  it('renders a div element with class name of "superpower-name and the text"', () => {
-    expect(wrapper.find('.superpower-name')).toBePresent();
-    expect(wrapper.find('.superpower-name')).toMatchSelector('div');
-    expect(wrapper.find('.superpower-name').text()).toEqual('Super Strength')
+  it('renders a div element with class name of "sp-name and the text"', () => {
+    expect(wrapper.find('.sp-name')).toBePresent();
+    expect(wrapper.find('.sp-name')).toMatchSelector('div');
+    expect(wrapper.find('.sp-name').text()).toEqual('Super Strength')
   });
 
-  it('renders a div element with class name of "superpower-description and the text"', () => {
-    expect(wrapper.find('.superpower-description')).toBePresent();
-    expect(wrapper.find('.superpower-description')).toMatchSelector('div');
-    expect(wrapper.find('.superpower-description').text()).toEqual('I can rip phone books in half')
+  it('renders a div element with class name of "sp-desc and the text"', () => {
+    expect(wrapper.find('.sp-desc')).toBePresent();
+    expect(wrapper.find('.sp-desc')).toMatchSelector('div');
+    expect(wrapper.find('.sp-desc').text()).toEqual('I can rip phone books in half')
   });
 });

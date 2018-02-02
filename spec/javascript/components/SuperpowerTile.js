@@ -12,12 +12,12 @@ describe('SuperpowerTile', () => {
     )
   });
 
-  it('renders a p tag', () => {
-    expect(wrapper.find('p')).toBePresent();
+  it('renders a div tag', () => {
+    expect(wrapper.find('div')).toBePresent();
   });
 
-  it('should render a p tag with the text property value', () => {
-    expect(wrapper.find('p').text()).toBe('Flight');
+  it('should render a div tag with the text property value', () => {
+    expect(wrapper.find('div').text()).toBe('Flight');
   });
 
 });

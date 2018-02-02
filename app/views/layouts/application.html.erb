@@ -3,6 +3,12 @@
 <head>
   <title>SuperpowerReviewSite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Bangers');
+    </style>
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -10,36 +16,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">SuperpowerReviewSite</a></h1>
-      </li>
-    </ul>
-
     <section class="top-bar-section">
-      <ul class="left">
-        <% if current_user %>
-          <% if current_user.admin? %>
-            <li><%= link_to 'Users', admin_users_path %></li>
-            <li><%= link_to 'Superpowers', admin_superpowers_path %></li>
-          <% end %>
-        <% end %>
-      </ul>
-      <ul class="right">
+    <nav class="nav-container">
+      <div class="nav-name">
+        <%= link_to image_tag("nav-title-bar", alt: "title"), root_path%>
+      </div>
+      <div class="nav-logo">
+        <%= link_to image_tag("SupLogo", alt: "logo")%>
+      </div>
+      <div class="nav-links">
         <%- if current_user -%>
           <% if current_user.admin? %>
             <li><%= link_to 'Admin', admin_root_path %></li>
+            <li><%= link_to 'Users', admin_users_path %></li>
+            <li><%= link_to 'Superpowers', admin_superpowers_path %></li>
           <% end %>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <div class="nav-so"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <div class="nav-su"><%= link_to 'Sign Up', new_user_registration_path %></div>
+          <div class="nav-si"><%= link_to 'Sign In', new_user_session_path %></div>
         <%- end -%>
-      </ul>
-    </section>
-  </nav>
+      </div>
+    </nav>
+  </section>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
