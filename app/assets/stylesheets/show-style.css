@@ -1,7 +1,3 @@
-@font-face {
- font-family: 'SFSlapstickComicOblique';
-  src:font-url('../fonts/SFSlapstickComic Oblique.ttf');
-}
 
 .show-container {
   display: grid;
