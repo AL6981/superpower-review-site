@@ -1,0 +1,36 @@
+
+.admin-panel {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-top: 50px;
+  align-self: center;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.ru {
+  font-family: 'Bangers', cursive;
+  text-shadow: 4px 4px 2px #ADADAD;
+  text-align: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.table {
+  font-family: 'Ubuntu', sans-serif;
+  border: 6px ridge #ADADAD;
+  grid-column: 3 / 6;
+  justify-content: center;
+}
+
+.add-power {
+  width: 200px;
+  font-family: 'Ubuntu', sans-serif;
+  border: 5px solid grey;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  align-content: center;
+  background-color: #334773;
+}

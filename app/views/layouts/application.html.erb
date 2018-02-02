@@ -16,8 +16,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <section class="top-bar-section">
+    <section class="top-bar-section">
     <nav class="nav-container">
       <div class="nav-name">
         <%= link_to image_tag("nav-title-bar", alt: "title"), root_path%>
@@ -27,6 +26,9 @@
       </div>
       <div class="nav-links">
         <%- if current_user -%>
+          <% if current_user.admin? %>
+            <div class="nav-admin"><%= link_to 'Admin', admin_root_path %></div>
+          <% end %>
           <div class="nav-so"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
         <%- else -%>
           <div class="nav-su"><%= link_to 'Sign Up', new_user_registration_path %></div>

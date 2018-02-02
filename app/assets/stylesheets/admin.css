@@ -1,0 +1,68 @@
+.button.admin {
+  background-color: #334773;
+  /* color: #FFFFFF; */
+}
+.button.admin:hover {
+ -moz-box-shadow: 0 0 10px #ccc;
+ -webkit-box-shadow: 0 0 10px #ccc;
+ box-shadow: 0 0 10px #ccc;
+}
+/* .button.admin:hover,
+.button.admin:focus {
+  background-color: darken($buttoncolor, 5%);
+} */
+
+.admin-button-group {
+  margin: 10px;
+}
+.admin-panel {
+  width: 75%;
+}
+
+.admin-text-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 25px;
+  grid-gap: 20px;
+  border-radius: 5px;
+  border: 6px ridge #ADADAD;
+  background-color: #C7C7C7;
+  padding: 15px;
+}
+
+.admin-h1{
+  font-family: 'Bangers', cursive;
+  text-shadow: 4px 4px 2px #ADADAD;
+  text-align: center;
+}
+
+.admin-h3{
+  font-family: 'Bangers', cursive;
+  text-shadow: 4px 4px 2px #ADADAD;
+  text-align: center;
+}
+
+.admin-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+
+.user-link {
+  grid-column: 4 / 5;
+  border: 5px solid grey;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  align-self: center;
+  background-color: #334773;
+}
+
+.power-link {
+  grid-column: 4 / 5;
+  border: 5px solid grey;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  align-self: center;
+  background-color: #334773;
+}
