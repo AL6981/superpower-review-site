@@ -12,9 +12,10 @@ body {
 }
 
 .tile-container {
-  border: 4px ridge #ADADAD;
+  border: 6px ridge #ADADAD;
   text-align: center;
   min-height: 100px;
+  background-color: #C7C7C7;
 }
 
 .superpower-name {
